@@ -1,56 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[hexo及next主题使用遇到的问题]]></title>
-    <url>%2Fmixture%2Fb13ba7b7.html</url>
-    <content type="text"><![CDATA[我在使用hexo和next主题，期间遇到问题的解决方法一一罗列： 安装使用 next 主题http://theme-next.iissnan.com/ Hexo使用不蒜子统计功能失效问题解决https://www.jianshu.com/p/089762f90e1c hexo博客添加评论神器—valinehttps://blog.csdn.net/qq_40265501/article/details/80019508 Hexo Next 主题中添加本地搜索功能https://blog.csdn.net/lijing742180/article/details/87970909 Hexo之next主题设置首页不显示全文(只显示预览)https://www.jianshu.com/p/393d067dba8d 资源文件夹https://hexo.io/zh-cn/docs/asset-folders.html hexo+github上传图片到博客 (这个会创建很多文件夹，我不使用)https://www.jianshu.com/p/8d28027fec76 建议把图片压缩再放到source文件夹图片在线压缩：https://www.tuhaokuai.com/ hexo禁用特定文章的评论https://blog.csdn.net/jiluben/article/details/40868981]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo及next主题使用遇到的问题</title>
+      <link href="/mixture/b13ba7b7.html"/>
+      <url>/mixture/b13ba7b7.html</url>
+      
+        <content type="html"><![CDATA[<p>我在使用hexo和next主题，期间遇到问题的解决方法一一罗列：</p><h2 id="安装使用-next-主题"><a href="#安装使用-next-主题" class="headerlink" title="安装使用 next 主题"></a>安装使用 next 主题</h2><p><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a></p><h2 id="Hexo使用不蒜子统计功能失效问题解决"><a href="#Hexo使用不蒜子统计功能失效问题解决" class="headerlink" title="Hexo使用不蒜子统计功能失效问题解决"></a>Hexo使用不蒜子统计功能失效问题解决</h2><p><a href="Hexo使用不蒜子统计功能失效问题解决">https://www.jianshu.com/p/089762f90e1c</a></p><h2 id="hexo博客添加评论神器—valine"><a href="#hexo博客添加评论神器—valine" class="headerlink" title="hexo博客添加评论神器—valine"></a>hexo博客添加评论神器—valine</h2><p><a href="https://blog.csdn.net/qq_40265501/article/details/80019508" target="_blank" rel="noopener">https://blog.csdn.net/qq_40265501/article/details/80019508</a></p><h2 id="Hexo-Next-主题中添加本地搜索功能"><a href="#Hexo-Next-主题中添加本地搜索功能" class="headerlink" title="Hexo Next 主题中添加本地搜索功能"></a>Hexo Next 主题中添加本地搜索功能</h2><p><a href="https://blog.csdn.net/lijing742180/article/details/87970909" target="_blank" rel="noopener">https://blog.csdn.net/lijing742180/article/details/87970909</a></p><h2 id="Hexo之next主题设置首页不显示全文-只显示预览"><a href="#Hexo之next主题设置首页不显示全文-只显示预览" class="headerlink" title="Hexo之next主题设置首页不显示全文(只显示预览)"></a>Hexo之next主题设置首页不显示全文(只显示预览)</h2><p><a href="https://www.jianshu.com/p/393d067dba8d" target="_blank" rel="noopener">https://www.jianshu.com/p/393d067dba8d</a></p><h2 id="资源文件夹"><a href="#资源文件夹" class="headerlink" title="资源文件夹"></a>资源文件夹</h2><p><a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/asset-folders.html</a></p><h2 id="hexo-github上传图片到博客-这个会创建很多文件夹，我不使用"><a href="#hexo-github上传图片到博客-这个会创建很多文件夹，我不使用" class="headerlink" title="hexo+github上传图片到博客 (这个会创建很多文件夹，我不使用)"></a>hexo+github上传图片到博客 (这个会创建很多文件夹，我不使用)</h2><p><a href="https://www.jianshu.com/p/8d28027fec76" target="_blank" rel="noopener">https://www.jianshu.com/p/8d28027fec76</a></p><h2 id="建议把图片压缩再放到source文件夹"><a href="#建议把图片压缩再放到source文件夹" class="headerlink" title="建议把图片压缩再放到source文件夹"></a>建议把图片压缩再放到<code>source</code>文件夹</h2><p>图片在线压缩：<a href="https://www.tuhaokuai.com/" target="_blank" rel="noopener">https://www.tuhaokuai.com/</a></p><h2 id="hexo禁用特定文章的评论"><a href="#hexo禁用特定文章的评论" class="headerlink" title="hexo禁用特定文章的评论"></a>hexo禁用特定文章的评论</h2><p><a href="https://blog.csdn.net/jiluben/article/details/40868981" target="_blank" rel="noopener">https://blog.csdn.net/jiluben/article/details/40868981</a></p>]]></content>
+      
+      
       <categories>
-        <category>混合</category>
+          
+          <category> 混合 </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>hexo next 主题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Funcategorized%2F4a17b156.html</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment 启动 Hexo 本地站点，并开启调试模式1$ hexo s --debug 清除缓存、生产并部署到主分支12$ hexo clean$ hexo d -g]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo jquery 加载失败问题]]></title>
-    <url>%2Fmixture%2F9e5800d1.html</url>
-    <content type="text"><![CDATA[昨天部署上线hexo，想在手机上体验一番，但是奈何进度条一直显示加载状态，而且导航栏按钮点击无效。 打开pc谷歌浏览器控制台，提示错误： 123456GET https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js net::ERR_CONNECTION_TIMED_OUTjquery.fancybox.pack.js:46 Uncaught ReferenceError: jQuery is not defined at jquery.fancybox.pack.js:46(anonymous) @ jquery.fancybox.pack.js:46script.js:137 Uncaught ReferenceError: jQuery is not defined at script.js:137 打开themes\landscape\layout_partial\after-footer.ejs： 123&lt;!-- &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt; --&gt;&lt;script src=&quot;//cdn.bootcss.com/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt; 换成国内cdn就解决了。]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> hexo next 主题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/uncategorized/4a17b156.html"/>
+      <url>/uncategorized/4a17b156.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><h3 id="启动-Hexo-本地站点，并开启调试模式"><a href="#启动-Hexo-本地站点，并开启调试模式" class="headerlink" title="启动 Hexo 本地站点，并开启调试模式"></a>启动 Hexo 本地站点，并开启调试模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s --debug</span><br></pre></td></tr></table></figure><h3 id="清除缓存、生产并部署到主分支"><a href="#清除缓存、生产并部署到主分支" class="headerlink" title="清除缓存、生产并部署到主分支"></a>清除缓存、生产并部署到主分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo jquery 加载失败问题</title>
+      <link href="/mixture/9e5800d1.html"/>
+      <url>/mixture/9e5800d1.html</url>
+      
+        <content type="html"><![CDATA[<p>昨天部署上线hexo，想在手机上体验一番，但是奈何进度条一直显示加载状态，而且导航栏按钮点击无效。</p><p>打开pc谷歌浏览器控制台，提示错误：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js net::ERR_CONNECTION_TIMED_OUT</span><br><span class="line">jquery.fancybox.pack.js:46 Uncaught ReferenceError: jQuery is not defined</span><br><span class="line">    at jquery.fancybox.pack.js:46</span><br><span class="line">(anonymous) @ jquery.fancybox.pack.js:46</span><br><span class="line">script.js:137 Uncaught ReferenceError: jQuery is not defined</span><br><span class="line">    at script.js:137</span><br></pre></td></tr></table></figure><p>打开themes\landscape\layout_partial\after-footer.ejs：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt; --&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;//cdn.bootcss.com/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>换成国内cdn就解决了。</p>]]></content>
+      
+      
       <categories>
-        <category>混合</category>
+          
+          <category> 混合 </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>个人博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo-abbrlink 将中文标题转字母数字]]></title>
-    <url>%2Fmixture%2F7af33d81.html</url>
-    <content type="text"><![CDATA[hexo-abbrlink 安装 hexo-abbrlink1npm install hexo-abbrlink --save 如果提示安装eslin、babel-eslint： 1npm install eslint babel-eslint -D 修改 _config.yml12345permalink: :category/:abbrlink.htmlpermalink_defaults: enabbrlink: alg: crc32 #算法： crc16(default) and crc32 rep: hex #进制： dec(default) and hex 4种组合：crc16 &amp; hexhttps://post.zz173.com/posts/66c8.html crc16 &amp; dechttps://post.zz173.com/posts/65535.html crc32 &amp; hexhttps://post.zz173.com/posts/8ddf18fb.html crc32 &amp; dechttps://post.zz173.com/posts/1690090958.html 参考：https://leafjame.github.io/posts/4084686398.html]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 个人博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo-abbrlink 将中文标题转字母数字</title>
+      <link href="/mixture/7af33d81.html"/>
+      <url>/mixture/7af33d81.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.npmjs.com/package/hexo-abbrlink" target="_blank" rel="noopener">hexo-abbrlink</a></p><h2 id="安装-hexo-abbrlink"><a href="#安装-hexo-abbrlink" class="headerlink" title="安装 hexo-abbrlink"></a>安装 hexo-abbrlink</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure><p>如果提示安装eslin、babel-eslint：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint babel-eslint -D</span><br></pre></td></tr></table></figure><h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改 _config.yml"></a>修改 _config.yml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">permalink: :category/:abbrlink.html</span><br><span class="line">permalink_defaults: en</span><br><span class="line">abbrlink:</span><br><span class="line">    alg: crc32   #算法： crc16(default) and crc32</span><br><span class="line">    rep: hex     #进制： dec(default) and hex</span><br></pre></td></tr></table></figure><p>4种组合：<br>crc16 &amp; hex<br><a href="https://post.zz173.com/posts/66c8.html" target="_blank" rel="noopener">https://post.zz173.com/posts/66c8.html</a></p><p>crc16 &amp; dec<br><a href="https://post.zz173.com/posts/65535.html" target="_blank" rel="noopener">https://post.zz173.com/posts/65535.html</a></p><p>crc32 &amp; hex<br><a href="https://post.zz173.com/posts/8ddf18fb.html" target="_blank" rel="noopener">https://post.zz173.com/posts/8ddf18fb.html</a></p><p>crc32 &amp; dec<br><a href="https://post.zz173.com/posts/1690090958.html" target="_blank" rel="noopener">https://post.zz173.com/posts/1690090958.html</a></p><p><a href="https://leafjame.github.io/posts/4084686398.html" target="_blank" rel="noopener">参考：https://leafjame.github.io/posts/4084686398.html</a></p>]]></content>
+      
+      
       <categories>
-        <category>混合</category>
+          
+          <category> 混合 </category>
+          
       </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>中文标题转字母数字</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[分类名与路径名称分别设置]]></title>
-    <url>%2Fmixture%2Fa787eed.html</url>
-    <content type="text"><![CDATA[1、修改永久连接格式我把文章的 永久链接 格式修改了成:category/:title.html _config.yml： 123456# URL## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;url: http://yoursite.comroot: /permalink: :category/:title.htmlpermalink_defaults: en 2、设置分类添加设置了文章分类前端。 此时路径为：http://localhost:4000/前端/文章标题.html 我要url分类路径显示英文。 3、修改category_map_config.yml： 12345# Category &amp; Tagdefault_category: uncategorizedcategory_map: 前端: front-endtag_map: 此时路径为：http://localhost:4000/front-end/文章标题.html 标签同理。]]></content>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 中文标题转字母数字 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类名与路径名称分别设置</title>
+      <link href="/mixture/a787eed.html"/>
+      <url>/mixture/a787eed.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、修改永久连接格式"><a href="#1、修改永久连接格式" class="headerlink" title="1、修改永久连接格式"></a>1、修改永久连接格式</h2><p>我把文章的 <a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">永久链接</a> 格式修改了成<code>:category/:title.html</code></p><p><code>_config.yml</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yoursite.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :category/:title.html</span><br><span class="line">permalink_defaults: en</span><br></pre></td></tr></table></figure><h2 id="2、设置分类"><a href="#2、设置分类" class="headerlink" title="2、设置分类"></a>2、设置分类</h2><p>添加设置了文章分类<code>前端</code>。</p><p>此时路径为：<a href="http://localhost:4000/前端/文章标题.html" target="_blank" rel="noopener">http://localhost:4000/前端/文章标题.html</a></p><p>我要url分类路径显示英文。</p><h2 id="3、修改category-map"><a href="#3、修改category-map" class="headerlink" title="3、修改category_map"></a>3、修改category_map</h2><p><code>_config.yml</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">        前端: front-end</span><br><span class="line">tag_map:</span><br></pre></td></tr></table></figure><p>此时路径为：<a href="http://localhost:4000/front-end/文章标题.html" target="_blank" rel="noopener">http://localhost:4000/front-end/文章标题.html</a></p><p>标签同理。</p>]]></content>
+      
+      
       <categories>
-        <category>混合</category>
+          
+          <category> 混合 </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>个人博客</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 个人博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
