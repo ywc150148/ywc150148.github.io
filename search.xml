@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[hexo的next主题使用遇到的问题]]></title>
+    <title><![CDATA[hexo及next主题使用遇到的问题]]></title>
     <url>%2Fmixture%2Fb13ba7b7.html</url>
-    <content type="text"><![CDATA[安装使用 next 主题http://theme-next.iissnan.com/ Hexo使用不蒜子统计功能失效问题解决https://www.jianshu.com/p/089762f90e1c hexo博客添加评论神器—valinehttps://blog.csdn.net/qq_40265501/article/details/80019508 Hexo Next 主题中添加本地搜索功能https://blog.csdn.net/lijing742180/article/details/87970909]]></content>
+    <content type="text"><![CDATA[我在使用hexo和next主题，期间遇到问题的解决方法一一罗列： 安装使用 next 主题http://theme-next.iissnan.com/ Hexo使用不蒜子统计功能失效问题解决https://www.jianshu.com/p/089762f90e1c hexo博客添加评论神器—valinehttps://blog.csdn.net/qq_40265501/article/details/80019508 Hexo Next 主题中添加本地搜索功能https://blog.csdn.net/lijing742180/article/details/87970909 Hexo之next主题设置首页不显示全文(只显示预览)https://www.jianshu.com/p/393d067dba8d 资源文件夹https://hexo.io/zh-cn/docs/asset-folders.html hexo+github上传图片到博客 (这个会创建很多文件夹，我不使用)https://www.jianshu.com/p/8d28027fec76 建议把图片压缩再放到source文件夹图片在线压缩：https://www.tuhaokuai.com/ hexo禁用特定文章的评论https://blog.csdn.net/jiluben/article/details/40868981]]></content>
       <categories>
         <category>混合</category>
       </categories>
@@ -13,17 +13,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[再来一年]]></title>
-    <url>%2Fmixture%2Fd96fb627.html</url>
-    <content type="text"></content>
-      <categories>
-        <category>混合</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2Funcategorized%2F4a17b156.html</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment 启动 Hexo 本地站点，并开启调试模式1$ hexo s --debug 清除缓存、生产并部署到主分支12$ hexo clean$ hexo d -g]]></content>
   </entry>
   <entry>
     <title><![CDATA[hexo jquery 加载失败问题]]></title>
