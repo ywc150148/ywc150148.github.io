@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[文档、书籍分享]]></title>
+    <url>%2Fmixture%2F74bd31aa.html</url>
+    <content type="text"><![CDATA[后端node.js1、《node.js权威指南》 作者: 陆凌牛出版社: 机械工业出版社出版年: 2014-4-1 百度云盘：https://pan.baidu.com/s/1Q5hjJUPkEe2QvvXdNvBjtQ提取码：9ay6]]></content>
+      <categories>
+        <category>混合</category>
+      </categories>
+      <tags>
+        <tag>学习书籍</tag>
+        <tag>pdf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[fis3前端工程构建工具]]></title>
     <url>%2Ffront-end%2F664fd9e5.html</url>
     <content type="text"><![CDATA[昨天尝试webapck使用ejs模板配置公用组件，网上关于webpack使用ejs配置公用组件的教程太少了，有几个教程我尝试了，都以失败告终。 ejs官网：https://ejs.bootcss.com/ 开发原生多页面项目，不同于使用vue，repeat这些框架，很多重复的部件，公用头部、底部，导航等等，管理起来太费时间了，好像glup也可以做到公用组件，但是不想要glup。 fis3是一个不错的选择，因为简单容易使用，我只针对使用它的一个功能也足够了。 在html中嵌入资源：http://fis.baidu.com/fis3/docs/user-dev/inline.html html中嵌入页面文件 源码： 1234// index.html&lt;div class="layout"&gt; &lt;link rel="import" href="head.html?__inline"&gt;&lt;/div&gt; 12// head.html (公共组件)&lt;h1&gt;这里是头部&lt;/h1&gt; 编译后： 1234// index.html&lt;div class="layout"&gt; &lt;h1&gt;这里是头部&lt;/h1&gt;&lt;/div&gt; 配置好一个demo，有点贪心加了其他功能进去，github:https://github.com/ywc150148/fis-demo 但是好像挺少人使用fis3，配置sass失败，找不到解决方法。]]></content>
