@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[node.js：console对象]]></title>
+    <url>%2Fback-end%2Fb83ce424.html</url>
+    <content type="text"><![CDATA[标准输出流conosole.log方法用于进行标准输出流的输出，即在控制台中显示一行字符串。 12// app.jsconsole.log("hello node.js") 运行 1node app.js 标准输出流将输出到控制台 hello node.js 重定向标准输出流将app.js输出的字符串输出到info.log文件中，（1代表重定向标准输出流） 1node app.js 1&gt;info.log 如果没有info.log，它会自动创建并写入。 打开info.log可以看到： 1hello node.js 标准错误输出流重定向输出将app.js错误信息输出的字符串输出到error.log文件中，（2代表重定向标准错误输出流） 1234// app.jsconsole.error("This is a test")// 或者输出一个未定义的变量// conosole.log(name) 如果没有error.log，它会自动创建并写入。 打开error.log可以看到： 123456node : This is a test所在位置 行:1 字符: 1+ node app.js 2&gt;error.log+ ~~~~~~~~~~~~~~~~~~~~~~~ + CategoryInfo : NotSpecified: (This is a test:String) [], RemoteException + FullyQualifiedErrorId : NativeCommandError 统计一段代码执行时间console.time(label)console.timeEnd(label) 这两个方法使用一个参数，并且这个两个方法使用的参数字符串必须相同。 1234567// app.jsconsole.time("test")var q;for(var i=0;i++;i&lt;20)&#123; q+=1;&#125;console.timeEnd("test") 运行： 1node app.js 结果： test: 0.086ms]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[文档、书籍分享]]></title>
     <url>%2Fshare%2F74bd31aa.html</url>
-    <content type="text"><![CDATA[后端node.js1、《node.js权威指南》 作者: 陆凌牛出版社: 机械工业出版社出版年: 2014-4-1 百度云盘：https://pan.baidu.com/s/1Q5hjJUPkEe2QvvXdNvBjtQ提取码：9ay6]]></content>
+    <content type="text"><![CDATA[后端node.js1、《node.js权威指南》 作者: 陆凌牛出版社: 机械工业出版社出版年: 2014-4-1 百度云盘：https://pan.baidu.com/s/1vvYZfVnqn98BdVK39itMnw提取码：d40u]]></content>
       <categories>
         <category>分享</category>
       </categories>
