@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[node.js学习笔记]]></title>
+    <url>%2Fback-end%2F3c2bd137.html</url>
+    <content type="text"><![CDATA[判断是否主模块在模块中写入： 12var a = module === require.main;console.log(require) // true 主模块，false 非主模块 例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模块内的代码多次运行。 123var test1 = require('./testModule.js');var test2 = require('./testModule.js');var test3 = require('./testModule.js'); 获取模块文件名和当前目录12console.log("获取模块文件名:",__filename)console.log("获取当前目录:",__dirname) 取消事件的所有事件处理函数1234567891011121314151617181920212223242526272829var http = require('http');var server = http.createServer();server.on('request', function (req, res) &#123; if (req.url !== '/favicon.ico') &#123; console.log("收到客户端请求"); &#125;&#125;);server.on('request', function (req, res) &#123; // 不处理收藏加图标的请求 if (req.url !== '/favicon.ico') &#123; console.log(req.url); &#125; res.end();&#125;);// 取消'request'事件的所有事件处理函数server.removeAllListeners('request');server.on('request', function (req, res) &#123; if (req.url !== '/favicon.ico') &#123; console.log('你可以在控制台看到这句'); &#125; res.end();&#125;);server.listen(1234, "127.0.0.1"); removeAllListeners方法中使用事件名称参数时，将取消该事件的所有事件处理函数removeAllListeners方法中不使用事件名称参数时，将取消所有已被指定的事件 查看npm包全局安装路径1npm root -g 修改全局安装路径修改到 d:\node\node_module 1npmconfig set prefix &quot;d:\node&quot; 文件读写参数‘r’：读取文件．如果文件不存在则抛出异常。‘r+’：读取并写入文件，如果文件不存在则抛出异常。‘rs’：以同步方式读取文件并通知操作系统忽略本地文件系统缓存．如果文件不存在则抛出异常。由于该属性值的使用将使操作系统忽略本地文件系统缓存机制，因此在操作网络文件系统时建议使用该属性值，但由于其对性能产生一定的负面影响．所以在其他场合下不建议使用。‘w’：写人文件。如果文件不存在则创建该文件，如果该文件已存在则清空文件内容。‘wx’：作用与W类似，但是以排他方式写人文件。‘w+’：读取并写人文件。如果文件不存在则创建该文件，如果该文件巳存在则清空文件内容。‘wx+’： 作用与’w+’类似，但是以排他方式打开文件。‘a’：追加写人文件。如果文件不存在则创建该文件。‘ax’：作用与’a’类似，但是以排他方式写人文件。‘a+’：读取并追加写人文件，如果文件存在则创建该文件 。‘ax+’：作用与’a+’类似，但是以排他方式打开文件。]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[node.js：console对象]]></title>
     <url>%2Fback-end%2Fb83ce424.html</url>
     <content type="text"><![CDATA[标准输出流conosole.log方法用于进行标准输出流的输出，即在控制台中显示一行字符串。 12// app.jsconsole.log("hello node.js") 运行 1node app.js 标准输出流将输出到控制台 hello node.js 重定向标准输出流将app.js输出的字符串输出到info.log文件中，（1代表重定向标准输出流） 1node app.js 1&gt;info.log 如果没有info.log，它会自动创建并写入。 打开info.log可以看到： 1hello node.js 标准错误输出流重定向输出将app.js错误信息输出的字符串输出到error.log文件中，（2代表重定向标准错误输出流） 1234// app.jsconsole.error("This is a test")// 或者输出一个未定义的变量// conosole.log(name) 如果没有error.log，它会自动创建并写入。 打开error.log可以看到： 123456node : This is a test所在位置 行:1 字符: 1+ node app.js 2&gt;error.log+ ~~~~~~~~~~~~~~~~~~~~~~~ + CategoryInfo : NotSpecified: (This is a test:String) [], RemoteException + FullyQualifiedErrorId : NativeCommandError 统计一段代码执行时间console.time(label)console.timeEnd(label) 这两个方法使用一个参数，并且这个两个方法使用的参数字符串必须相同。 1234567// app.jsconsole.time("test")var q;for(var i=0;i++;i&lt;20)&#123; q+=1;&#125;console.timeEnd("test") 运行： 1node app.js 结果： test: 0.086ms]]></content>
