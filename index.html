@@ -409,10 +409,10 @@
         
           
           判断是否主模块在模块中写入：
-12var a = module === require.main;console.log(require) // true 主模块，false 非主模块
+12var a = module === require.main;console.log(a) // true 主模块，false 非主模块
 
 例如：node app.js那么，app.js就是主模块
-引用同一个模块不会引起模块内的代码多次运行引入模块，加
+引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执
           ...
           <!--noindex-->
           <div class="post-button text-center">

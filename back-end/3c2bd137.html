@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="判断是否主模块在模块中写入： 12var a = module === require.main;console.log(require) // true 主模块，false 非主模块  例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模">
+<meta name="description" content="判断是否主模块在模块中写入： 12var a = module === require.main;console.log(a) // true 主模块，false 非主模块  例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模块内的代码多">
 <meta name="keywords" content="node.js,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js学习笔记">
 <meta property="og:url" content="http://yoursite.com/back-end/3c2bd137.html">
 <meta property="og:site_name" content="Seaweed knight&#39;s Blog">
-<meta property="og:description" content="判断是否主模块在模块中写入： 12var a = module === require.main;console.log(require) // true 主模块，false 非主模块  例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模">
+<meta property="og:description" content="判断是否主模块在模块中写入： 12var a = module === require.main;console.log(a) // true 主模块，false 非主模块  例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模块内的代码多">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-10T09:47:55.385Z">
+<meta property="og:updated_time" content="2019-09-11T00:38:32.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js学习笔记">
-<meta name="twitter:description" content="判断是否主模块在模块中写入： 12var a = module === require.main;console.log(require) // true 主模块，false 非主模块  例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模">
+<meta name="twitter:description" content="判断是否主模块在模块中写入： 12var a = module === require.main;console.log(a) // true 主模块，false 非主模块  例如：node app.js那么，app.js就是主模块 引用同一个模块不会引起模块内的代码多次运行引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，主模块多次引用同一个模块不会引起模块内的代码多">
 
 
 
@@ -410,7 +410,7 @@
 
       
         <h2 id="判断是否主模块"><a href="#判断是否主模块" class="headerlink" title="判断是否主模块"></a>判断是否主模块</h2><p>在模块中写入：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">module</span> === <span class="built_in">require</span>.main;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">require</span>) <span class="comment">// true 主模块，false 非主模块</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">module</span> === <span class="built_in">require</span>.main;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// true 主模块，false 非主模块</span></span><br></pre></td></tr></table></figure>
 
 <p>例如：node app.js<br>那么，app.js就是主模块</p>
 <h2 id="引用同一个模块不会引起模块内的代码多次运行"><a href="#引用同一个模块不会引起模块内的代码多次运行" class="headerlink" title="引用同一个模块不会引起模块内的代码多次运行"></a>引用同一个模块不会引起模块内的代码多次运行</h2><p>引入模块，加载模块时会执行模块里面的全部代码，模块加载后将缓存到内存缓存区中，<br>主模块多次引用同一个模块不会引起模块内的代码多次运行。</p>
@@ -535,7 +535,7 @@
 <p>mesage.txt：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">爱编程</span><br></pre></td></tr></table></figure>
 </blockquote>
-
+<h2 id="fs-close-关闭文件"><a href="#fs-close-关闭文件" class="headerlink" title="fs.close 关闭文件"></a>fs.close 关闭文件</h2>
       
     </div>
     
@@ -710,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断是否主模块"><span class="nav-number">1.</span> <span class="nav-text">判断是否主模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用同一个模块不会引起模块内的代码多次运行"><span class="nav-number">2.</span> <span class="nav-text">引用同一个模块不会引起模块内的代码多次运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取模块文件名和当前目录"><span class="nav-number">3.</span> <span class="nav-text">获取模块文件名和当前目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消事件的所有事件处理函数"><span class="nav-number">4.</span> <span class="nav-text">取消事件的所有事件处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看npm包全局安装路径"><span class="nav-number">5.</span> <span class="nav-text">查看npm包全局安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改全局安装路径"><span class="nav-number">6.</span> <span class="nav-text">修改全局安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件读写参数"><span class="nav-number">7.</span> <span class="nav-text">文件读写参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Buffer-缓冲区"><span class="nav-number">8.</span> <span class="nav-text">Buffer(缓冲区)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Buffer-与字符编码"><span class="nav-number">8.1.</span> <span class="nav-text">Buffer 与字符编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-Buffer-类"><span class="nav-number">8.2.</span> <span class="nav-text">创建 Buffer 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入缓冲区"><span class="nav-number">8.3.</span> <span class="nav-text">写入缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从缓冲区读取数据"><span class="nav-number">8.4.</span> <span class="nav-text">从缓冲区读取数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将缓冲区内数据用fs-write写入使用fs-open打开的文件"><span class="nav-number">9.</span> <span class="nav-text">将缓冲区内数据用fs.write写入使用fs.open打开的文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断是否主模块"><span class="nav-number">1.</span> <span class="nav-text">判断是否主模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用同一个模块不会引起模块内的代码多次运行"><span class="nav-number">2.</span> <span class="nav-text">引用同一个模块不会引起模块内的代码多次运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取模块文件名和当前目录"><span class="nav-number">3.</span> <span class="nav-text">获取模块文件名和当前目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消事件的所有事件处理函数"><span class="nav-number">4.</span> <span class="nav-text">取消事件的所有事件处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看npm包全局安装路径"><span class="nav-number">5.</span> <span class="nav-text">查看npm包全局安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改全局安装路径"><span class="nav-number">6.</span> <span class="nav-text">修改全局安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件读写参数"><span class="nav-number">7.</span> <span class="nav-text">文件读写参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Buffer-缓冲区"><span class="nav-number">8.</span> <span class="nav-text">Buffer(缓冲区)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Buffer-与字符编码"><span class="nav-number">8.1.</span> <span class="nav-text">Buffer 与字符编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-Buffer-类"><span class="nav-number">8.2.</span> <span class="nav-text">创建 Buffer 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入缓冲区"><span class="nav-number">8.3.</span> <span class="nav-text">写入缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从缓冲区读取数据"><span class="nav-number">8.4.</span> <span class="nav-text">从缓冲区读取数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将缓冲区内数据用fs-write写入使用fs-open打开的文件"><span class="nav-number">9.</span> <span class="nav-text">将缓冲区内数据用fs.write写入使用fs.open打开的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fs-close-关闭文件"><span class="nav-number">10.</span> <span class="nav-text">fs.close 关闭文件</span></a></li></ol></div>
             
 
           </div>
