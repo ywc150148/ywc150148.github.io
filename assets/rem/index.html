@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rem自适应布局</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="nav">
+            <div class="nav-l">
+                <i class="iconfont iconmenu"></i>
+            </div>
+            <div class="nav-m">
+                <div>我的</div>
+                <div class="nav-m-active">发现</div>
+                <div>云村</div>
+                <div>视频</div>
+            </div>
+            <div class="nav-r">
+                <i class="iconfont iconsousuo1"></i>
+            </div>
+        </div>
+
+        <div id="banner">
+            <img src="./images/banner.png" alt="">
+        </div>
+
+        <div id="menu">
+            <div>
+                <div class="menu-icon">
+                    <i class="iconfont icon38"></i>
+                </div>
+                <span>每日推荐</span>
+            </div>
+
+            <div>
+                <div class="menu-icon">
+                    <i class="iconfont iconyinleliebiao"></i>
+                </div>
+                <span>歌单</span>
+            </div>
+
+            <div>
+                <div class="menu-icon">
+                    <i class="iconfont iconpaixingbang"></i>
+                </div>
+                <span>排行榜</span>
+            </div>
+
+            <div>
+                <div class="menu-icon">
+                    <i class="iconfont icontubiaozhizuomobanyihuifu-"></i>
+                </div>
+                <span>电台</span>
+            </div>
+
+            <div>
+                <div class="menu-icon">
+                    <i class="iconfont iconzhiboziyuan"></i>
+                </div>
+                <span>直播</span>
+            </div>
+        </div>
+
+        <div class="line-hr"></div>
+
+        <div class="common-title">
+            <div class="common-title-name">推荐歌单</div>
+            <div class="common-title-link">歌单广场</div>
+        </div>
+
+        <div class="song-list-layout">
+            <div class="song-list-item">
+                <div class="song-list-item-top">
+                    <img src="./images/s-1.jpg" alt="">
+                    <i class="iconfont iconplay">5.9亿</i>
+                </div>
+                <div class="song-list-item-bottom">
+                    <p>[华语速爆新歌]最新华语音乐推荐</p>
+                </div>
+            </div>
+
+            <div class="song-list-item">
+                <div class="song-list-item-top">
+                    <img src="./images/s-2.jpg" alt="">
+                    <i class="iconfont iconplay">126万</i>
+                </div>
+                <div class="song-list-item-bottom">
+                    <p>爱情就像一场大病，过了，就好。</p>
+                </div>
+            </div>
+            <div class="song-list-item">
+                <div class="song-list-item-top">
+                    <img src="./images/s-3.jpg" alt="">
+                    <i class="iconfont iconplay">2074万</i>
+                </div>
+                <div class="song-list-item-bottom">
+                    <p>读书，然后忘记背景音乐（8-18更新）</p>
+                </div>
+            </div>
+            <div class="song-list-item">
+                <div class="song-list-item-top">
+                    <img src="./images/s-4.jpg" alt="">
+                    <i class="iconfont iconplay">38128</i>
+                </div>
+                <div class="song-list-item-bottom">
+                    <p>《赵铁夫讲单词》中的超好听英文歌</p>
+                </div>
+            </div>
+            <div class="song-list-item">
+                <div class="song-list-item-top">
+                    <img src="./images/s-5.jpg" alt="">
+                    <i class="iconfont iconplay">1582万</i>
+                </div>
+                <div class="song-list-item-bottom">
+                    <p>重度失眠歌单【白噪音/纯音】</p>
+                </div>
+            </div>
+            <div class="song-list-item">
+                <div class="song-list-item-top">
+                    <img src="./images/s-6.jpg" alt="">
+                    <i class="iconfont iconplay">11万</i>
+                </div>
+                <div class="song-list-item-bottom">
+                    <p>怀旧音乐之荷东的士高（一）</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         *n: window
+         *doc: document .html文档;
+         *el: documentElement 整个节点树的根节点root，即<html> 标签;
+         *dw: Design width 设计稿宽度
+         *p: proportion 比例
+         *event: 事件
+         *clientWidth: clientWidth 网页可见宽度，不包滚动条等边线，会随窗口的显示大小改变。
+         */
+
+        ! function (n) {
+            var doc = n.document,
+                el = doc.documentElement,
+                dw = 750,
+                p = dw / 100,
+                event = "orientationchange" in n ? "orientationchange" : "resize",
+                fun = function () {
+                    var clientW = el.clientWidth<320?320:el.clientWidth;
+                    el.style.fontSize = clientW / p + "px"
+                    console.log(clientW / p)
+                };
+            doc.addEventListener && (n.addEventListener(event, fun, false), doc.addEventListener("DOMContentLoaded", fun,
+                false))
+        }(window);
+    </script>
+</body>
+
+</html>
