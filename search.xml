@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常用工具util]]></title>
+    <url>%2Fback-end%2Ffc5f22b.html</url>
+    <content type="text"><![CDATA[摘自《NodeJs开发指南》 util 是一个 Node.js 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能过于精简的不足。 util.inheritsutil.inherits(constructor, superConstructor)是一个实现对象间原型继承的函数。 12345678910111213141516171819202122232425var util = require('util');function Base() &#123; this.name = 'base'; this.base = 1991; this.sayHello = function () &#123; console.log('Hello ' + this.name); &#125;;&#125;Base.prototype.showName = function () &#123; console.log(this.name);&#125;;function Sub() &#123; this.name = 'sub';&#125;util.inherits(Sub, Base);var objBase = new Base();objBase.showName();objBase.sayHello();console.log(objBase);var objSub = new Sub();objSub.showName();//objSub.sayHello(); console.log(objSub); baseHello base{ name: ‘base’, base: 1991, sayHello: [Function] }sub{ name: ‘sub’ } 注意，Sub 仅仅继承了 Base 在原型中定义的函数，而构造函数内部创造的 base 属性和 sayHello 函数都没有被 Sub 继承。同时，在原型中定义的属性不会被 console.log 作为对象的属性输出。 util.inspectutil.inspect(object,[showHidden],[depth],[colors])是一个将任意对象转换为字符串的方法，通常用于调试和错误输出。它至少接受一个参数 object，即要转换的对象。 showHidden 是一个可选参数，如果值为 true，将会输出更多隐藏信息。 depth 表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多少。如果不指定depth，默认会递归2层，指定为 null 表示将不限递归层数完整遍历对象。 color 值为 true，输出格式将会以 ANSI 颜色编码，通常用于在终端显示更漂亮的效果。 12345678910var util = require('util'); function Person() &#123; this.name = 'byvoid'; this.toString = function() &#123; return this.name; &#125;; &#125; var obj = new Person(); console.log(util.inspect(obj)); console.log(util.inspect(obj, true)); 运行结果是： 123456789&#123; name: &apos;byvoid&apos;, toString: [Function] &#125; &#123; toString: &#123; [Function] [prototype]: &#123; [constructor]: [Circular] &#125;, [caller]: null, [length]: 0, [name]: &apos;&apos;, [arguments]: null &#125;, name: &apos;byvoid&apos; &#125; 更多http://nodejs.cn/api/util.html]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>noe.js</tag>
+        <tag>util</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTTP客户端]]></title>
+    <url>%2Fback-end%2Fdfbfd615.html</url>
+    <content type="text"><![CDATA[http 模块提供了两个函数 http.request 和 http.get，功能是作为客户端向 HTTP 服务器发起请求。 http.requesthttp.request(options, callback)option 参数如下所示。 host ：请求网站的域名或 IP 地址。 port ：请求网站的端口，默认 80。 method ：请求方法，默认是 GET。 path ：请求的相对于根的路径，默认是“/”。QueryString 应该包含在其中。例如 /search?query=byvoid。 headers ：一个关联数组对象，为请求头的内容。 callback 传递一个参数，为 http.ClientResponse 的实例。http.request 返回一个 http.ClientRequest 的实例。 通过 http.request 发送 POST 请求1234567891011121314151617181920212223242526272829303132// httprequest.jsvar http = require('http');var querystring = require('querystring');// 用于url参数对象转化为url参数字符串var contents = querystring.stringify(&#123; name: '小红', email: '123@qq.com', address: '广州',&#125;);// 请求参数var options = &#123; host: '127.0.0.1', port: '3000', path: '/', method: 'POST', headers: &#123; 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': contents.length &#125;&#125;;// 发起请求var req = http.request(options, function (res) &#123; res.setEncoding('utf8'); res.on('data', function (data) &#123; console.log(data); &#125;);&#125;);req.write(contents);req.end(); 通过 http.request 发送 GET 请求1234567891011121314151617181920212223242526272829303132333435// 客户端发起getvar http = require('http');var querystring = require('querystring');//这是需要提交的数据 var data = &#123; name: '小花', time: new Date().getTime()&#125;;// 用于url参数对象转化为url参数字符串var content = querystring.stringify(data);var options = &#123; hostname: '127.0.0.1', port: 3000, path: '/test?' + content, method: 'GET'&#125;;var req = http.request(options, function (res) &#123; console.log('STATUS: ' + res.statusCode); console.log('HEADERS: ' + JSON.stringify(res.headers)); res.setEncoding('utf8'); res.on('data', function (chunk) &#123; console.log('BODY: ' + chunk); &#125;);&#125;);req.on('error', function (e) &#123; console.log('problem with request: ' + e.message);&#125;);req.end(); http.get通过 http.get 发送 GET 请求1234567var http = require('http'); http.get(&#123;host: 'www.baidu.com'&#125;, function(res) &#123; res.setEncoding('utf8'); res.on('data', function (data) &#123; console.log(data); &#125;); &#125;);]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+        <tag>http客户端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[querystring.stringify和JSON.stringify的区别]]></title>
+    <url>%2Fback-end%2Fc0182012.html</url>
+    <content type="text"><![CDATA[学习node.js，使用querystring模块产生的疑问，querystring.stringify和JSON.stringify的区别。 12345var querystring = require('querystring');var obj = &#123; name:"goodboy", age:18&#125;; 使用stringify将obj准换123// url参数对象转化为url参数字符串console.log(querystring.stringify(obj));// name=goodboy&amp;age=18 123// json对象转换成字符串对象console.log(JSON.stringify(obj));// &#123;"name":"goodboy","age":18&#125; 使用parse转换之前各自转换的结果1234// url参数字符串转化为url参数对象console.log(querystring.parse('name=goodboy&amp;age=18')); // 注意：数字返回的是字符串类型!// &#123; name: 'goodboy', age: '18' &#125; 123// 字符串对象转换成json对象console.log(JSON.parse('&#123;"name":"goodboy","age":18&#125;'));// &#123; name: 'goodboy', age: 18 &#125;]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[exports与moudle.exports]]></title>
+    <url>%2Fback-end%2F2fe02dea.html</url>
+    <content type="text"><![CDATA[exports与moudle.exportsnode.js中exports与moudle.exports的区别： exports公开模块接口，通过require调用此模块，可以直接访问此模块中exports对象的成员函数。 moudle.exports输出对象本身，通过require调用此模块需要实例化之后才可以调用。 exports exports是module.exports的一个引用，exports指向的是module.exports。 12345678// hello.jsvar name;exports.setName = function(str)&#123; name = str;&#125;;exports.sayHello = function()&#123; console.log("你好"+name);&#125;; 12345// app.jsvar hello1 = require('./hello');// 可以直接调用模块中exports对象的成员函数hello1.setName('jack');hello1.sayHello(); module.exports module.exports 输出 对象本身，它是一个类。 1234567891011// moudle.jsfunction Hello() &#123; var name; this.setName = function (thyName) &#123; name = thyName; &#125;; this.sayHello = function () &#123; console.log('Hello ' + name); &#125;;&#125;;module.exports = Hello; // 输出对象本身 123456// app.jsvar moudleHello = require('./moudle');// 需要实例化才可以调用 hello2 = new moudleHello();hello2.setName('tom'); hello2.sayHello();]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+        <tag>moudle.exports</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo设置特定文件不使用模板渲染]]></title>
     <url>%2Fmixture%2F224b403e.html</url>
     <content type="text"><![CDATA[不使用模板渲染文章把md文章文件头部layout设置为false 123456---title: 此文章不使用模板渲染categories: hexodate: 2019-09-18 12:25:57layout: false--- 这个方法一般不会使用，很不美观。 不使用模板渲染目录或文件Hexo默认会对/source/里的所有页面应用主题模板渲染。有时候，我需要展示我写的html页面，需要一个干净的页面，关闭模板渲染。我的html、css、js、image放在/source/assets/。打开根目录下的_config.yml，搜索skip_render: 1skip_render: assets/** assets/**表示不使用模板渲染此目录下所有的文件，跳过单独文件可以写assets/index.html 如何访问？我的文件目录： 123456- source - assets index.html style.css main.js photo.jpg 在浏览器打开：http://localhost:4000/assets/index.html 在文章内引用：123&lt;http://localhost:4000/assets/index.html&gt;[这是我的demo首页](/assets/index.html)![这是我的图片](/assets/photo.jpg)]]></content>
