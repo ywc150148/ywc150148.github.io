@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[express切换模板引擎]]></title>
+    <url>%2Fback-end%2F33f9d94.html</url>
+    <content type="text"><![CDATA[之前我按照《node.js开发指南》书里面使用express -t ejs microblog命令构建工程，当我使用npm install安装依赖时，命令行提示： Jade has been renamed to pug, please install the latest version of pug instead of jade 因为模板引擎 Jade 改名为 Pug，作者说Jade这个名字是一个软件的商标，如果不改名很有可能会面临起诉。 项目配置文件package.json还是使用jade这个名字。 我打开项目发现视图文件后缀居然是jade，百度才知道现在express的版本不使用-t这个命令了，express -t ejs microblog这句话不会构建出ejs后缀的视图，默认给我选了jade后缀。 网上很多更改模板引擎的方法，需要手动修改好几处项目的代码。 我这里的方法只需要命令行工具而且针对未开发的项目，开发过的项目不知道会不会有影响。 将jade改为ejs查看帮助，运行： 1express -h 可以看到以下参数： 123456789101112131415Usage: express [options] [dir]Options: --version output the version number -e, --ejs add ejs engine support --pug add pug engine support --hbs add handlebars engine support -H, --hogan add hogan.js engine support -v, --view &lt;engine&gt; add view &lt;engine&gt; support (dust|ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade) --no-view use static html instead of view engine -c, --css &lt;engine&gt; add stylesheet &lt;engine&gt; support (less|stylus|compass|sass) (defaults to plain css) --git add .gitignore -f, --force force on non-empty directory -h, --help output usage information 注意可以改成ejs,pub,hbs这三种其中一种。 运行： 1express -ejs 此时提示 ‘destination is not empty, continue?[y/N]’，运行： 1y 就改成ejs了，打开app.js，里面的app.set(&#39;view engine&#39;, &#39;jade&#39;)变成了app.set(&#39;view engine&#39;, &#39;ejs&#39;)，views文件夹下多了几个ejs后缀的文件。 建议再安装一次依赖： 1npm install 启动服务器： 1DEBUG=microblog:* npm start 打开浏览器http://localhost:3000/]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+        <tag>express</tag>
+        <tag>ejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[安装express]]></title>
+    <url>%2Fback-end%2F46777998.html</url>
+    <content type="text"><![CDATA[在看《node.js开发指南》，看到安装express，这本书是几年前的，内容可能有点旧，书里面的教程和现实存在一点差异，所以我要去网上找安装express的方法。 安装expre打开命令行工具，全局安装expre： 1npm install -g express 全局安装命令工具： 1npm install -g express-generator 查看版本： 1express --version 查看帮助信息： 1express --help 建立工程在你的工程目录下运行： 1express myblog -e 以上命令创建一个名为myblog的web项目，-e表示创建项目的视图文件的后缀为.ejs。 express切换模板引擎 构建完会提示你： change directory: $ cd microblog install dependencies: $ npm install run the app: $ DEBUG=microblog:* npm start 依次执行提示的命令，就是进去项目里面安装依赖，然后打开服务。 运行： 1cd microblog 运行： 1npm install 启动服务器运行： 1DEBUG=microblog:* npm start 打开浏览器http://localhost:3000/]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[常用工具util]]></title>
     <url>%2Fback-end%2Ffc5f22b.html</url>
     <content type="text"><![CDATA[摘自《NodeJs开发指南》 util 是一个 Node.js 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能过于精简的不足。 util.inheritsutil.inherits(constructor, superConstructor)是一个实现对象间原型继承的函数。 12345678910111213141516171819202122232425var util = require('util');function Base() &#123; this.name = 'base'; this.base = 1991; this.sayHello = function () &#123; console.log('Hello ' + this.name); &#125;;&#125;Base.prototype.showName = function () &#123; console.log(this.name);&#125;;function Sub() &#123; this.name = 'sub';&#125;util.inherits(Sub, Base);var objBase = new Base();objBase.showName();objBase.sayHello();console.log(objBase);var objSub = new Sub();objSub.showName();//objSub.sayHello(); console.log(objSub); baseHello base{ name: ‘base’, base: 1991, sayHello: [Function] }sub{ name: ‘sub’ } 注意，Sub 仅仅继承了 Base 在原型中定义的函数，而构造函数内部创造的 base 属性和 sayHello 函数都没有被 Sub 继承。同时，在原型中定义的属性不会被 console.log 作为对象的属性输出。 util.inspectutil.inspect(object,[showHidden],[depth],[colors])是一个将任意对象转换为字符串的方法，通常用于调试和错误输出。它至少接受一个参数 object，即要转换的对象。 showHidden 是一个可选参数，如果值为 true，将会输出更多隐藏信息。 depth 表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多少。如果不指定depth，默认会递归2层，指定为 null 表示将不限递归层数完整遍历对象。 color 值为 true，输出格式将会以 ANSI 颜色编码，通常用于在终端显示更漂亮的效果。 12345678910var util = require('util'); function Person() &#123; this.name = 'byvoid'; this.toString = function() &#123; return this.name; &#125;; &#125; var obj = new Person(); console.log(util.inspect(obj)); console.log(util.inspect(obj, true)); 运行结果是： 123456789&#123; name: &apos;byvoid&apos;, toString: [Function] &#125; &#123; toString: &#123; [Function] [prototype]: &#123; [constructor]: [Circular] &#125;, [caller]: null, [length]: 0, [name]: &apos;&apos;, [arguments]: null &#125;, name: &apos;byvoid&apos; &#125; 更多http://nodejs.cn/api/util.html]]></content>
@@ -121,7 +145,7 @@
   <entry>
     <title><![CDATA[文档、书籍、网站分享]]></title>
     <url>%2Fshare%2F74bd31aa.html</url>
-    <content type="text"><![CDATA[后端node.js 书籍 《node.js权威指南》 作者: 陆凌牛出版社: 机械工业出版社出版年: 2014-4-1 百度云盘：https://pan.baidu.com/s/1vvYZfVnqn98BdVK39itMnw提取码：d40u node.js 文章、文档 Node.js 中文网文档文档地址：http://nodejs.cn/api/ node.js fs.open 和 fs.write 读取文件和改写文件文章地址： https://www.cnblogs.com/wushanbao/p/7003308.html 七天学会NodeJS文档地址：https://nqdeng.github.io/7-days-nodejs/#1 网站分享 廖雪峰的官方网站网站地址：https://www.liaoxuefeng.com/]]></content>
+    <content type="text"><![CDATA[后端node.js 书籍 《node.js权威指南》 作者: 陆凌牛出版社: 机械工业出版社出版年: 2014-4-1 百度云盘：https://pan.baidu.com/s/1vvYZfVnqn98BdVK39itMnw提取码：d40u node.js 文章、文档 Node.js 中文网文档文档地址：http://nodejs.cn/api/ node.js fs.open 和 fs.write 读取文件和改写文件文章地址： https://www.cnblogs.com/wushanbao/p/7003308.html 七天学会NodeJS文档地址：https://nqdeng.github.io/7-days-nodejs/#1 网站分享 廖雪峰的官方网站网站地址：https://www.liaoxuefeng.com/ Java知识分享网网站地址：http://www.java1234.com/a/javabook/webbase/这个网站上有很多免费pdf书籍下载。]]></content>
       <categories>
         <category>分享</category>
       </categories>
