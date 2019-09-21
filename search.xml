@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[express的format使用笔记]]></title>
+    <url>%2Fback-end%2F5919f93c.html</url>
+    <content type="text"><![CDATA[res.format根据客户端的请求头，来响应不同的内容。测试各种http请求，建议使用API调试工具Postman，省去写重复代码的时间。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647// index.jsvar express = require('express');var app = express();app.get('/citys', function (req, res) &#123; // 请求头 console.log(req.headers.accept) // 数据 var citys = [&#123; id: 1, name: "广州" &#125;, &#123; id: 2, name: "深圳" &#125;]; // xml格式的数据 var citysXml = '&lt;?xml version="1.0"?&gt;&lt;items&gt;'+citys.map(function(city)&#123; return '&lt;item id="'+city.id+'"&gt;'+city.name+'&lt;/item&gt;' &#125;).join('') +'&lt;/items&gt;'; res.format(&#123; 'application/json': function () &#123; res.json(citys); &#125;, 'text/plain': function () &#123; res.type('text/plain'); res.send(citys); &#125;, 'application/xml': function () &#123; res.type('application/xml'); res.send(citysXml); &#125;, 'text/xml': function () &#123; res.type('text/xml'); res.send(citysXml); &#125;, 'default': function () &#123; // 服务器端无法提供与 Accept-Charset 以及 Accept-Language 消息头指定的值相匹配的响应。 res.status(406).send('Not Acceptable'); &#125; &#125;);&#125;);app.listen(3000); 在res.format里面放了几个对象，它会根据当前客户端的请求头accept来响应，所以，在向服务器发起请求时，你（客户端）需要告诉服务器你希望接受的数据类型。如果请求头没有设置accept，那么这个res.format会根据默认的类型响应。 向127.0.0.1:3000/citys发送GET请求，请求的数据类型是&#39;Accept&#39;:&#39;application/json&#39;，服务器返回： 12345678910[ &#123; &quot;id&quot;: 1, &quot;name&quot;: &quot;广州&quot; &#125;, &#123; &quot;id&quot;: 2, &quot;name&quot;: &quot;深圳&quot; &#125;] 向127.0.0.1:3000/citys发送GET请求，请求的数据类型是&#39;Accept&#39;:&#39;text/xml&#39;，服务器返回： 12345&lt;?xml version=&quot;1.0&quot;?&gt;&lt;items&gt; &lt;item id=&quot;1&quot;&gt;广州&lt;/item&gt; &lt;item id=&quot;2&quot;&gt;深圳&lt;/item&gt;&lt;/items&gt; 向127.0.0.1:3000/citys发送GET请求，请求的数据类型是&#39;Accept&#39;:&#39;abc&#39;，服务器返回： 1Not Acceptable Http报头Accept与Content-Type的区别Postman 使用方法详解]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+        <tag>express</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[express切换模板引擎]]></title>
     <url>%2Fback-end%2F33f9d94.html</url>
     <content type="text"><![CDATA[之前我按照《node.js开发指南》书里面使用express -t ejs microblog命令构建工程，当我使用npm install安装依赖时，命令行提示： Jade has been renamed to pug, please install the latest version of pug instead of jade 因为模板引擎 Jade 改名为 Pug，作者说Jade这个名字是一个软件的商标，如果不改名很有可能会面临起诉。 项目配置文件package.json还是使用jade这个名字。 我打开项目发现视图文件后缀居然是jade，百度才知道现在express的版本不使用-t这个命令了，express -t ejs microblog这句话不会构建出ejs后缀的视图，默认给我选了jade后缀。 网上很多更改模板引擎的方法，需要手动修改好几处项目的代码。 我这里的方法只需要命令行工具而且针对未开发的项目，开发过的项目不知道会不会有影响。 将jade改为ejs查看帮助，运行： 1express -h 可以看到以下参数： 123456789101112131415Usage: express [options] [dir]Options: --version output the version number -e, --ejs add ejs engine support --pug add pug engine support --hbs add handlebars engine support -H, --hogan add hogan.js engine support -v, --view &lt;engine&gt; add view &lt;engine&gt; support (dust|ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade) --no-view use static html instead of view engine -c, --css &lt;engine&gt; add stylesheet &lt;engine&gt; support (less|stylus|compass|sass) (defaults to plain css) --git add .gitignore -f, --force force on non-empty directory -h, --help output usage information 注意可以改成ejs,pub,hbs这三种其中一种。 运行： 1express -ejs 此时提示 ‘destination is not empty, continue?[y/N]’，运行： 1y 就改成ejs了，打开app.js，里面的app.set(&#39;view engine&#39;, &#39;jade&#39;)变成了app.set(&#39;view engine&#39;, &#39;ejs&#39;)，views文件夹下多了几个ejs后缀的文件。 建议再安装一次依赖： 1npm install 启动服务器： 1DEBUG=microblog:* npm start 打开浏览器http://localhost:3000/]]></content>
@@ -22,6 +34,8 @@
       </categories>
       <tags>
         <tag>node.js</tag>
+        <tag>express</tag>
+        <tag>ejs</tag>
       </tags>
   </entry>
   <entry>
