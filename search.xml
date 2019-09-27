@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[iptables防火墙]]></title>
+    <url>%2Fmixture%2F9c5e073b.html</url>
+    <content type="text"><![CDATA[基本操作查看防火墙状态service iptables status 停止防火墙service iptables stop 启动防火墙service iptables start 重启防火墙service iptables restart 永久关闭防火墙chkconfig iptables off 永久关闭后重启chkconfig iptables on 开启80端口1vim /etc/sysconfig/iptables # 加入如下代码 -A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT 复制自：https://blog.csdn.net/bbwangj/article/details/74502967]]></content>
+      <categories>
+        <category>混合</category>
+      </categories>
+      <tags>
+        <tag>iptables</tag>
+        <tag>防火墙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7安装mongoDB]]></title>
+    <url>%2Fmixture%2F4dd35e6d.html</url>
+    <content type="text"><![CDATA[CentOS 7 安装MongoDB 4.0]]></content>
+      <categories>
+        <category>混合</category>
+      </categories>
+      <tags>
+        <tag>mongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7安装nginx]]></title>
+    <url>%2Fmixture%2F9a79daec.html</url>
+    <content type="text"><![CDATA[复制参考自：https://segmentfault.com/a/1190000010443248配置https出问题了看：https://www.cnblogs.com/ghjbk/p/6744131.html 安装准备需要安装一下依赖库： 1234yum install gcc-c++ yum install pcre pcre-devel yum install zlib zlib-devel yum install openssl openssl--devel 安装Nginx是否安装了nginx： 1find -name nginx 卸载nginx: 1yum remove nginx 进入目录： 1cd /usr/local 去官网获取下载链接http://nginx.org/en/download.html 下载： 1wget http://nginx.org/download/nginx-1.17.4.tar.gz 解压： 1tar -zxvf nginx-1.17.4.tar.gz 进入nginx目录： 1cd nginx-1.12.1 使用–prefix参数指定nginx安装的目录,make、make install安装： 1./configure 运行： 1make 运行： 1make install 查看nginx安装目录： 1whereis nginx 启动和停止nginx进入/usr/local/nginx/sbin/进行操作 cd /usr/local/nginx/sbin/./nginx./nginx -s stop./nginx -s quit./nginx -s reload ./nginx -s quit: 此方式停止步骤是待nginx进程处理任务完毕进行停止。./nginx -s stop: 此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。 重启 nginx先重启后启动： 12./nginx -s quit./nginx 重新加载配置文件，修改nginx.conf后，使用nginx -s reload即可生效，不需要重启nginx。 1./nginx -s reload 开机自启动打开rc.local，增加启动代码： 1vi /etc/rc.local 增加一行： 1/usr/local/nginx/sbin/nginx 查杀nginx进程查询nginx进程： 1ps aux | grep nginx root 7262 0.0 0.0 20496 608 ? Ss 09:43 0:00 nginx: master process ./nginxnobody 7263 0.0 0.0 20948 1340 ? S 09:43 0:00 nginx: worker processroot 7271 0.0 0.0 112648 968 pts/1 R+ 09:43 0:00 grep –color=auto nginx 使用进程id，杀死进程： 1kill -QUIT 7262 或： 1kill -TERM 7262 或: 1kill -INT 7262 强制停止进程： 1pkill -9 nginx nginx.conf文件位置nginx.conf是nginx的配置文件。 1cd /usr/local/nginx/conf 1vi nginx.conf]]></content>
+      <categories>
+        <category>混合</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[购买阿里云学生centOs服务器]]></title>
+    <url>%2Fmixture%2Ff77e40ed.html</url>
+    <content type="text"><![CDATA[学习了node.js和express，准备使用node.js+expres+mongonDB实现增删改查（CRUD）的API接口，并且外网可以请求。 购置了一台阿里云学生服务器。 使用浏览器远程连接不方便，所以使用xshell远程连接服务器。 设置密码（非远程密码）后，使用公网ip登录、密码远程连接，账号是root，输入密码时不会显示*号。 事项： 在服务器上安装配置node]]></content>
+      <categories>
+        <category>混合</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7安装node.js]]></title>
+    <url>%2Fmixture%2Fa03c0146.html</url>
+    <content type="text"><![CDATA[检查 wget 是否安装： 1rpm -qa|grep &quot;wget&quot; 进入目录：1cd /usr/local/src 下载node.js：1wget https://npm.taobao.org/mirrors/node/v12.10.0/node-v12.10.0-linux-x64.tar.xz node最新版下载地址http://nodejs.cn/download/ 查看目录： 1ls node-v12.10.0-linux-x64.tar.xz xz解压：1xz -d node-v12.10.0-linux-x64.tar.xz tar解压：1tar -xf node-v12.10.0-linux-x64.tar 进入目录：1cd node-v12.10.0-linux-x64 如果要全局使用node和npm，需要把node目录软链接到系统默认的PATH目录下。查看环境变量： 1echo $PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:是分隔符，上面有5个目录吧？ 另一个方法是把node目录添加到PATh环境变量里面。 我这里使用软连接，获取当前目录路径： 1pwd /usr/local/src/node-v12.10.0-linux-x64 创建软连接： 使用方法：ln –s 源文件 目标文件 12ln -s /usr/local/src/node-v12.10.0-linux-x64/bin/node /usr/local/bin/nodeln -s /usr/local/src/node-v12.10.0-linux-x64/bin/npm /usr/local/bin/npm 查看node版本： 1node -v v12.10.0 查看npm版本： 1npm -v 6.10.3]]></content>
+      <categories>
+        <category>混合</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[express4使用connect-flash]]></title>
     <url>%2Fback-end%2F8b39f4d1.html</url>
     <content type="text"><![CDATA[connect-flash connect-flash可以干什么flash消息用于重定向跳转时传递消息，例如a页面重定向到b页面并且传递一些信息给b页面。flash的信息是作为一次性变量，取出即删除，b页面刷新的话，消息会消失。connect-flash需要和express-session一起使用。 安装12npm install --save connect-flashnpm install --save express-session 配置app.js： 123456789101112131415161718192021222324var express = require('express');var session = require('express-session');var flash = require('connect-flash');var app = express();app.use(session(&#123; secret:'sss', resave: false, saveUninitialized: true&#125;));// 必须放在路由最上面app.use(flash());app.get('/a', function(req, res)&#123; // 发送 req.flash('msg', '我知道你会收到这条消息，刷新即消失。'); res.redirect('/b');// 重定向到 /b &#125;);app.get('/b', function(req, res)&#123; // 接收 res.render('viewB', &#123; msg: req.flash('msg') &#125;); &#125;); 我使用的是hbs模板，viewB.hbs： 12&lt;h1&gt;这里是b页面&lt;/h1&gt;&#123;&#123;msg&#125;&#125; 验证打开浏览器访问/a路由即重定向到/b，可以看到配置里面发送的消息。]]></content>
@@ -68,8 +127,8 @@
       </categories>
       <tags>
         <tag>node.js</tag>
-        <tag>express</tag>
         <tag>ejs</tag>
+        <tag>express</tag>
       </tags>
   </entry>
   <entry>
@@ -81,8 +140,8 @@
       </categories>
       <tags>
         <tag>node.js</tag>
-        <tag>express</tag>
         <tag>ejs</tag>
+        <tag>express</tag>
       </tags>
   </entry>
   <entry>
