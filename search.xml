@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决前端上传图片时显示方向错误]]></title>
+    <url>%2Ffront-end%2Fd9b80480.html</url>
+    <content type="text"><![CDATA[参考：EXIF.js官网【Vue】使用exif.js 获取图片相关信息JS对图片进行base64压缩以及图片的EXIF-Orientation信息数码照片Exif - Orientation 自动修正解决方案EXIF 方向参数 Orientation Orientation参数 纠正参数 参数 0行（未旋转上） 0列（未旋转左） 旋转（方法很多） 1 上 左 0° 2 上 右 水平翻转 3 下 右 180° 4 下 左 垂直翻转 5 左 上 顺时针90°+水平翻转 6 右 上 顺时针90° 7 右 下 顺时针90°+垂直翻转 8 左 下 逆时针90° EXIF是什么数码相机、iphone、安卓手机等等设备上拍照后会把exif信息记录在下来，这些信息的参数可能是色域、色彩空间、图像的有效宽度、曝光补偿、目标经度。至于保存下来有哪些参数，这要看设备。 EXIF（Exchangeable Image File）是 “可交换图像文件” 的缩写，当中包含了专门为数码相机的照片而定制的元数据，可以记录数码照片的拍摄参数、缩略图及其他属性信息，简单来说，Exif 信息是镶嵌在 JPEG/TIFF 图像文件格式内的一组拍摄参数。对于 Orientation 参数，简单的说是记录图片拍摄的相机的旋转信息，浏览器 (需要浏览器支持) 可以根据这个参数中的 val 信息自动旋转图片到正确的方向。 问题在vue中做图片上传、预览、上传服务器一系列操作时，我上传的某些图片预览时方向不正确，有270度显示的，有90度显示的，也有180度显示的。拍摄图片时相机旋转了角度，在手机图库中或浏览器页面中或者各种软件中可以显示正常是因为这些软件都支持纠正图片方向。但某些前端图片预览组件不会纠正图片的方向，所以，需要读取这些图片EXIF的Orientation参数，来纠正图片显示方向，Orientation保存了相机的旋转信息。 解决思路 获取显示不很正常的图片的Orientation参数 判断纠正需要旋转的度数 绘制canvas 输出base64 获取图片EXIF参数需要EXIF.js，安装使用方法异步查阅官网文档。 如果某个人使用手机拍了照片不作任何处理就发送到网络上，可以通过exif.js获取到图片上的信息。并不是所有图片都带有EXIF的参数 源代码纠正图片方向demo 示例代码在demo中，可以在浏览器中打开demo查看源代码。 功能： 纠正图片方向 可以设置输出图片宽度 不加太多功能，图片压缩，上传这些功能不应该合并在一起，应该细分才灵活。只针对Orientation为8、3、6的图片修正，其他的没有必要。 代码片段获取Orientation： 1234EXIF.getData(img, function () &#123; Orientation = EXIF.getTag(this, 'Orientation'); console.log("Orientation", Orientation)&#125;); 旋转角度 1234567891011121314151617181920212223242526272829if (Orientation &gt; 1) &#123; x = -width / 2; y = -height / 2; switch (Orientation) &#123; case 6: // 顺时针90度旋转 canvas.width = height; canvas.height = width; ctx.translate(height / 2, width / 2); ctx.rotate(Math.PI / 2); break; case 3: // 顺时针180度旋转 canvas.width = width; canvas.height = height; ctx.translate(width / 2, height / 2); ctx.rotate(Math.PI); break; case 8: // 顺时针270度旋转 canvas.width = height; canvas.height = width; ctx.translate(height / 2, width / 2); ctx.rotate(Math.PI * 1.5); break; &#125;&#125; demo中使用上传的方式获取图片，如果想直接传入base64的话，demo中也写了一个方法，直接传入base64编码图片： 1234567function userBase64(base64) &#123; if (/^data:image\/(\w+);base64,/i.test(base64)) &#123; createImg(base64); &#125;else &#123; alert("只能是base64编码图片") &#125;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>EXIF.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[iptables防火墙]]></title>
     <url>%2Fmixture%2F9c5e073b.html</url>
     <content type="text"><![CDATA[基本操作查看防火墙状态service iptables status 停止防火墙service iptables stop 启动防火墙service iptables start 重启防火墙service iptables restart 永久关闭防火墙chkconfig iptables off 永久关闭后重启chkconfig iptables on 开启80端口1vim /etc/sysconfig/iptables # 加入如下代码 -A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT 复制自：https://blog.csdn.net/bbwangj/article/details/74502967]]></content>

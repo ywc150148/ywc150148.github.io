@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修正图片显示方向</title>
+    <script src="https://cdn.bootcss.com/exif-js/2.3.0/exif.js"></script>
+
+    <style>
+        img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    上传图片：
+    <input type="file" id="fileInput" accept="image/*">
+    <hr>
+
+    原图：
+    <img id="img" src="" alt="">
+
+    <hr>
+    修正：
+    <img id="canvasPre" src="" alt="">
+
+    <script>
+        let fileInput = document.getElementById("fileInput");
+        let allTags, Orientation;
+
+        fileInput.addEventListener("change", fileChange);
+
+        function fileChange(event) {
+
+            let e = event || window.event;
+            let file = e.target.files[0];
+
+            // 判断文件类型
+            if (/^image/.test(file.type)) {
+                // 创建一个reader
+                let reader = new FileReader();
+                // 读取成 base64
+                reader.readAsDataURL(file);
+
+                // 读取回调
+                reader.onloadend = function () {
+
+                    // base64
+                    let result = this.result;
+
+                    // 图片预览
+                    let imgPre = document.getElementById("img");
+                    imgPre.src = result;
+                    imgPre.width = 300;
+
+                    createImg(result)
+  
+                };
+            }else {
+                alert("只能是图片类型")
+            }
+        }
+
+        function userBase64(base64) {
+            if (/^data:image\/(\w+);base64,/i.test(base64)) {
+                createImg(base64);
+            }else {
+                alert("只能是base64编码图片")
+            }
+        }
+
+        function createImg(src) {
+            // 创建用于绘制的图片
+            let img = new Image();
+            img.src = src;
+            img.onload = function () {
+                // 读取图片信息
+                EXIF.getData(img, function () {
+                    // allTags = EXIF.getAllTags(this);
+                    // console.log("allTags", allTags)
+                    Orientation = EXIF.getTag(this, 'Orientation');
+                    console.log("Orientation", Orientation)
+
+                    // 修正
+                    draw(this, Orientation, 300)
+                });
+            };
+        }
+
+        function draw(img, Orientation, w = '') {
+            //生成canvas
+            let canvas = document.createElement('canvas'),
+                ctx = canvas.getContext('2d');
+
+            let width = w || img.width,
+                scale = img.width / img.height;
+            let height = width / scale,
+                x = 0,
+                y = 0;
+
+            // 设置画布大小
+            canvas.width = width;
+            canvas.height = height;
+
+            // 图片带有exif的orientation信息，修正图片显示方向
+            if (Orientation > 1) {
+
+                x = -width / 2;
+                y = -height / 2;
+
+                switch (Orientation) {
+                    case 6:
+                        // 顺时针90度旋转
+                        canvas.width = height;
+                        canvas.height = width;
+                        ctx.translate(height / 2, width / 2);
+                        ctx.rotate(Math.PI / 2);
+                        break;
+                    case 3:
+                        // 顺时针180度旋转
+                        canvas.width = width;
+                        canvas.height = height;
+                        ctx.translate(width / 2, height / 2);
+                        ctx.rotate(Math.PI);
+                        break;
+                    case 8:
+                        // 顺时针270度旋转
+                        canvas.width = height;
+                        canvas.height = width;
+                        ctx.translate(height / 2, width / 2);
+                        ctx.rotate(Math.PI * 1.5);
+                        break;
+                }
+            }
+
+            // 铺底色
+            ctx.fillStyle = "#000";
+
+            // 绘制图片 [图片，起点x,y，图片宽，高]
+            ctx.drawImage(img, x, y, width, height);
+
+            // 获取base64
+            let base64 = canvas.toDataURL(`image/jpeg`, 1);
+
+            // canvas 预览
+            let canvasPre = document.getElementById("canvasPre");
+            canvasPre.src = base64;
+
+            return base64;
+        }
+    </script>
+
+</body>
+
+</html>
